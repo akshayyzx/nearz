@@ -16,7 +16,7 @@ const Header= ()=> {
 
         {/* Centered Navigation */}
         <nav className="hidden md:flex flex-grow justify-center gap-10">
-          {["Features", "Upcoming", "Testimonials", "Partners"].map((item) => (
+          {["Features", "Upcoming", "Partners", "Testimonials","Contact"].map((item) => (
             <button
               key={item}
               className="text-black text-lg font-medium relative cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-[#F25435] after:transition-all after:duration-300 hover:after:w-full"

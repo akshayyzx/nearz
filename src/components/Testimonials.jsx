@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
@@ -39,6 +39,14 @@ const testimonials = [
 export default function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
+
+  // Auto-slide every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [index]); // Depend on index to reset interval when it changes
 
   const prevSlide = () => {
     setDirection(-1);

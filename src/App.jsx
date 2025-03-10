@@ -9,7 +9,7 @@ import Upcoming from './components/Upcoming'
 import Testimonials from './components/Testimonials'
 import Partners from './components/Partners';
 import QuickLook from './components/QuickLook'
-import  { RevealLinks } from './components/RevealLinks'
+import ContactSection from './components/ContactSection';
 
 const App = () => {
   return (
@@ -29,7 +29,7 @@ const App = () => {
       <BorderDivider/>
       <QuickLook/>
       <BorderDivider/>
-      <RevealLinks/>
+      <ContactSection/>
     </div>
   );
 };
