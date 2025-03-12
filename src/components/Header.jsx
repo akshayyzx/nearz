@@ -9,7 +9,7 @@ const Header = ({ isConfettiRunning }) => {
 
   useEffect(() => {
     if (!isConfettiRunning) {
-      setTimeout(() => setApplyBlur(false), 4000); // Smooth removal
+      setTimeout(() => setApplyBlur(false), 2500); // Smooth removal
     }
   }, [isConfettiRunning]);
 
