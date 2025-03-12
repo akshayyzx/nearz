@@ -70,7 +70,7 @@ const Hero = () => {
           {/* Buttons */}
           <div className="flex gap-9 mt-6 justify-center md:justify-start">
             <Button 
-              className="bg-gray-500 text-white flex items-center cursor-pointer gap-2 px-4 py-4 font-semibold shadow-[3px_3px_0px_black] 
+              className="bg-gray-600 text-white flex items-center cursor-pointer gap-2 px-4 py-4 font-semibold shadow-[3px_3px_0px_black] 
               transition-all duration-200 hover:bg-[#F25435] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
               onClick={() => window.open("https://apps.apple.com/in/app/nearz/id1549902743", "_blank")}
             >
@@ -79,7 +79,7 @@ const Hero = () => {
             </Button>
 
             <Button 
-              className="bg-gray-500 text-white flex items-center gap-2 px-4 py-4 cursor-pointer font-semibold shadow-[3px_3px_0px_black] 
+              className="bg-gray-600 text-white flex items-center gap-2 px-4 py-4 cursor-pointer font-semibold shadow-[3px_3px_0px_black] 
               transition-all duration-200 hover:bg-[#F25435] hover:shadow-none hover:translate-x-[3px] hover:translate-y-[3px]"
               onClick={() => window.open("https://play.google.com/store/apps/details?id=com.dazzleapp&pcampaignid=web_share", "_blank")}
             >

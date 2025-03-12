@@ -10,6 +10,7 @@ import Testimonials from './components/Testimonials'
 import Partners from './components/Partners';
 import QuickLook from './components/QuickLook'
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer'
 
 
 
@@ -43,6 +44,8 @@ function App() {
       <QuickLook/>
       <BorderDivider/>
       <ContactSection/>
+      
+      <Footer/>
     </div>
   );
 };
