@@ -11,11 +11,11 @@ const ConfettiEffect = () => {
   useEffect(() => {
     const confettiTimer = setTimeout(() => {
       setShowConfetti(false);
-    }, 3000); // Confetti duration
+    }, 4000); // Confetti duration
 
     const blurTimer = setTimeout(() => {
       setBlurBackground(false);
-    }, 3000); // Remove blur after confetti stops
+    }, 4500); // Remove blur after confetti stops
 
     return () => {
       clearTimeout(confettiTimer);

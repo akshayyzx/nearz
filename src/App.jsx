@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useEffect } from 'react';
 import './App.css'
 import Header from './components/Header'
 import Hero from './components/Hero' ;
@@ -13,8 +13,18 @@ import ContactSection from './components/ContactSection';
 
 
 
-const App = () => {
-  
+function App() {
+  useEffect(() => {
+    const handleLoad = () => {
+      window.scrollTo(0, 0); // Scroll to top AFTER everything loads
+    };
+
+    window.onload = handleLoad; // Ensure it triggers only after full page load
+
+    return () => {
+      window.onload = null; // Cleanup to avoid conflicts
+    };
+  }, []);
   return (
     <div>
       <Header/>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const RevealLinks = () => {
   return (
-    <section className="flex flex-col items-start pl-2 sm:pl-5 text-[#F39E60] space-y-1 sm:space-y-1">
+    <section className="flex flex-col items-start pl-2 sm:pl-5 text-[#F96E2A] space-y-1 sm:space-y-1">
       <FlipLink href="https://x.com/Nearzsalon">Twitter</FlipLink>
       <FlipLink href="https://www.linkedin.com/in/nearz-app-468120202/">LinkedIn</FlipLink>
       <FlipLink href="https://www.facebook.com/profile.php?id=100063966076850">Facebook</FlipLink>
