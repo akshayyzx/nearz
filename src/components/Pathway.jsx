@@ -7,12 +7,33 @@ import img4 from "../assets/step4.gif";
 import img5 from "../assets/step5.gif";
 
 const steps = [
-  { text: "Customer looks for a new salon", img: img1, desc: "Find and book on Google, Facebook, and Instagram." },
-  { text: "Customer schedules a service online", img: img2, desc: "Eliminate scheduling hassles with 24x7 booking." },
-  { text: "Customer gets a reminder", img: img3, desc: "Get automated email and text reminders." },
-  { text: "Customer visits your salon", img: img4, desc: "Enjoy a personalized salon experience." },
-  { text: "Customer checks-out", img: img5, desc: "Quick and easy checkout with auto-filled details." },
+  { 
+    text: "Discover Nearby Salons", 
+    img: img1, 
+    desc: "Explore a variety of salons near you, from premium beauty studios to budget-friendly options, all in one place." 
+  },
+  { 
+    text: "Compare Services", 
+    img: img2, 
+    desc: "Easily compare salons based on pricing, distance, customer ratings, and available services to find the perfect match for your needs." 
+  },
+  { 
+    text: "Book Your Appointment", 
+    img: img3, 
+    desc: "Choose your preferred date and time, book instantly, and secure your appointment hassle-free—all with just a few taps." 
+  },
+  { 
+    text: "Enjoy Your Salon Experience", 
+    img: img4, 
+    desc: "Visit the salon at your scheduled time and enjoy high-quality services from experienced professionals without the long wait." 
+  },
+  { 
+    text: "Share Your Feedback", 
+    img: img5, 
+    desc: "Rate your experience, leave a review, and earn discounts, loyalty rewards, and exclusive deals for your next visit." 
+  },
 ];
+
 
 const Pathway = () => {
   return (

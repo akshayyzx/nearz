@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const images = [
   "https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2V8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D",
@@ -13,9 +13,13 @@ export default function SwipeCarousel() {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Prev / Next Slide
-  const prevSlide = () => setIndex((index - 1 + images.length) % images.length);
-  const nextSlide = () => setIndex((index + 1) % images.length);
+  // Auto-scroll every 2.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   // Handle Touch Start
   const handleTouchStart = (e) => {
@@ -30,28 +34,16 @@ export default function SwipeCarousel() {
   // Handle Touch End (Detect Swipe)
   const handleTouchEnd = () => {
     const swipeDistance = touchEndX.current - touchStartX.current;
-    if (swipeDistance > 50) prevSlide(); // Right Swipe
-    if (swipeDistance < -50) nextSlide(); // Left Swipe
+    if (swipeDistance > 50) {
+      setIndex((prev) => (prev - 1 + images.length) % images.length); // Swipe Right
+    }
+    if (swipeDistance < -50) {
+      setIndex((prev) => (prev + 1) % images.length); // Swipe Left
+    }
   };
 
   return (
     <div className="relative flex flex-col items-center">
-      {/* Buttons (Placed ABOVE Image to Prevent Overlap) */}
-      <div className="flex justify-between w-full max-w-[400px] px-4 mb-2">
-        <button
-          onClick={prevSlide}
-          className="bg-gray-200 text-gray-800 p-2 rounded-full hover:bg-gray-300 transition"
-        >
-          ◀
-        </button>
-        <button
-          onClick={nextSlide}
-          className="bg-gray-200 text-gray-800 p-2 rounded-full hover:bg-gray-300 transition"
-        >
-          ▶
-        </button>
-      </div>
-
       {/* Image Display */}
       <div
         className="overflow-hidden rounded-lg w-full max-w-[400px] aspect-square"

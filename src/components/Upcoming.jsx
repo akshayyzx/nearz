@@ -4,11 +4,11 @@ import Button from "./Button";
 
 const VirtualTryOn = () => {
   return (
-    <section className="text-center py-12 px-4 md:px-8 lg:px-16 bg-white text-black">
+    <section  id="upcoming" className="text-center py-12 px-4 md:px-8 lg:px-16 bg-white text-black scroll-mt-20">
       {/* Title */}
       <h3 className="text-lg md:text-xl font-bold text-[#F25435]">Create Your Looks</h3>
       <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mt-2">
-        Try Virtual Looks with  <strong className="text-[#F25435]"> Nearz AI-Based Engine</strong>
+        Try Virtual Looks with  <strong className="text-[#F25435]"> Nearz's AI-Based Engine</strong>
       </h2>
 
       {/* Carousel */}

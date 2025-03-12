@@ -11,7 +11,10 @@ import Partners from './components/Partners';
 import QuickLook from './components/QuickLook'
 import ContactSection from './components/ContactSection';
 
+
+
 const App = () => {
+  
   return (
     <div>
       <Header/>

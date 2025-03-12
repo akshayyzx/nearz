@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPhone } from "react-icons/fa";
+
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: "", message: "" });
@@ -40,16 +40,23 @@ const ContactForm = () => {
 
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-xl md:text-2xl font-semibold  text-center">
-        <strong className="text-[#F25435]">Contact</strong> Us
+      {/* Heading */}
+      <h2 className="text-lg md:text-xl font-semibold text-center">
+        Call{" "}
+        <a href="tel:+919220794223" className="text-[#F25435] font-bold">
+          +91 9220794223
+        </a>{" "} <br/>
+         Email{" "}
+        <a href="mailto:support@nearz.in" className="text-[#F25435] font-bold">
+          support@nearz.in
+        </a>{" "}  <br/>
+        OR
       </h2>
-      {/* Call Icon with Number */}
-      <a href="tel:+919876543210" className="flex items-center text-lg font-semibold text-[#F25435] mb-4">
-        <FaPhone className="mr-2" /> +91 9220794223
 
-      </a>
-
-      <h2 className="text-xl font-semibold mb-4 text-center">Get in Touch</h2>
+      {/* Pour Your Heart Out */}
+      <h2 className="text-xl font-semibold  text-center text-[#F25435] my-4">
+        Pour Your Heart Out
+      </h2>
 
       {/* Contact Form */}
       <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
@@ -67,7 +74,7 @@ const ContactForm = () => {
         {/* Message Input */}
         <textarea
           name="message"
-          placeholder="Say your heart out..."
+          placeholder="Your Suggestions..."
           required
           value={formData.message}
           onChange={handleChange}

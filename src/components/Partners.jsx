@@ -9,11 +9,11 @@ const logos = [
 
 const Partners = () => {
   return (
-    <div>
-      <h2 className="text-3xl font-bold text-center py-10">
+    <div id="partners" className="scroll-mt-16">
+      <h2 className="text-3xl font-bold text-center py-10 scroll-mt-16">
         Over <strong className="text-[#F25435]">100+</strong> salons onboarded last month and counting
       </h2>
-      <section className="relative overflow-hidden py-10">
+      <section  className="relative overflow-hidden py-10">
         <div className="relative w-full flex flex-col items-center space-y-12">
           {/* First Ribbon */}
           <div className="w-full -rotate-6 flex overflow-hidden border-4 border-white shadow-lg bg-gray-200 py-4">

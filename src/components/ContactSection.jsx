@@ -4,15 +4,23 @@ import ContactForm from "./ContactForm"; // Import your ContactForm component
 
 const ContactSection = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto px-6 py-12 space-y-12 md:space-y-0 md:space-x-12">
-      
-      {/* Rotating Icons Component */}
-      <div className="w-full md:w-1/2 flex justify-center">
+    <div
+      id="contact"
+      className="scroll-mt-24 flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto px-6 py-12 space-y-12 md:space-y-0 md:space-x-12"
+    >
+      {/* Rotating Icons & Heading Section */}
+      <div className="w-full md:justify-center">
+        <h2 className="text-xl md:text-4xl font-semibold my-4  ">
+          Drop a <strong className="text-[#F25435]">Follow</strong> and stay{" "}
+          <strong className="text-[#F25435]">Updated</strong> 🚀
+        </h2>
+        <div className="w-full md:w-3/4 flex justify-center">
         <RotatingIcons />
       </div>
-
+        
+      </div>
       {/* Contact Form Component */}
-      <div className="w-full md:w-1/2 flex justify-center">
+      <div className="w-full md:w-3/4 flex justify-center">
         <ContactForm />
       </div>
     </div>
