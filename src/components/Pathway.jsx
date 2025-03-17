@@ -37,7 +37,7 @@ const steps = [
 
 const Pathway = () => {
   return (
-    <section className="relative bg-white py-16 px-6 md:px-12 flex flex-col items-center ">
+    <section className="relative bg-white py-16 px-6 md:px-12 flex flex-col items-center  ">
       {/* Heading */}
       <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-10 md:mb-16 text-center">
         How It Works

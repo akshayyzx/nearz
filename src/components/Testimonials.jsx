@@ -35,7 +35,7 @@ export default function TestimonialCarousel() {
   });
 
   return (
-    <div id="testimonials" className="scroll-mt-10 overflow-x-hidden sm:overflow-x-auto" >
+    <div id="testimonials" className="scroll-mt-10 overflow-x-hidden sm:overflow-x-hidden" >
     <section className="text-center py-10 bg-white" {...handlers}>
       <h2 className="text-3xl  font-bold mb-6 text-[#F25435]">Testimonials</h2>
       <div className="relative flex justify-center items-center w-full">
