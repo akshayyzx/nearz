@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import appleBadge from '../assets/app-store.jpg';
-import playstoreBadge from '../assets/gplay.jpg';
+import playstoreBadge from '../assets/playstore.jpg';
 import mobileImage from "../assets/hero_banner.jpg";
 import backImage from "../assets/flip-image.jpg"; // New back-side image
 import { motion } from "framer-motion";
