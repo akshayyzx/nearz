@@ -10,7 +10,7 @@ const socialLinks = [
   {
     href: "https://medium.com/@nearz.app",
     icon: (
-      <span className="w-9 h-9 flex items-center justify-center">
+      <span className="w-8 h-8 flex items-center justify-center md:w-9 h-9">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqhNE7XJebS3KQUuqmmU88klzvL-p3Abu9yA&s"
           alt="Medium"
