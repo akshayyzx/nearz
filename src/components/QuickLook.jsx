@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
@@ -11,6 +11,8 @@ const images = [
 
 const ImageSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const prevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
@@ -20,10 +22,42 @@ const ImageSlider = () => {
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
+  // Handle touch start
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  // Handle touch move
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  // Handle touch end (detect swipe direction)
+  const handleTouchEnd = () => {
+    const swipeDistance = touchStartX.current - touchEndX.current;
+    const swipeThreshold = 50; // Minimum swipe distance to trigger change
+
+    if (swipeDistance > swipeThreshold) {
+      // Swipe left → Next slide
+      nextSlide();
+    } else if (swipeDistance < -swipeThreshold) {
+      // Swipe right → Previous slide
+      prevSlide();
+    }
+  };
+
   return (
-    <div className="relative w-full max-w-3xl mx-auto flex flex-col items-center justify-center overflow-hidden">
-      <h2 className="text-xl md:text-2xl font-semibold m-4 py-4">Take a <strong className="text-[#F25435]">Close</strong> Look at Our App</h2>
-      <div className="flex items-center ">
+    <div
+      className="relative w-full max-w-3xl mx-auto flex flex-col items-center justify-center overflow-hidden mb-10 overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <h2 className="text-xl md:text-2xl font-semibold m-4 py-6">
+        Take a <strong className="text-[#F25435]">Close</strong> Look at Our App
+      </h2>
+      <div className="flex items-center justify-center space-x-4 md:space-x-2">
         {[currentIndex - 1, currentIndex, currentIndex + 1].map((index) => {
           const actualIndex = (index + images.length) % images.length;
           const isActive = actualIndex === currentIndex;
@@ -34,12 +68,16 @@ const ImageSlider = () => {
               src={images[actualIndex]}
               alt={`Slide ${actualIndex + 1}`}
               className={`transition-all duration-500 rounded-lg shadow-lg 
-               ${isActive ? "w-64 h-112 md:w-80 md:h-[36rem] mx-auto transition-transform duration-700 ease-in-out scale-105" : "w-48 h-72 md:w-56 md:h-96 opacity-70 transition-transform duration-500 ease-out"}`}
+               ${
+                 isActive
+                   ? "w-64 h-112 md:w-80 md:h-[37rem] mx-auto transition-transform duration-700 ease-in-out scale-105"
+                   : "w-48 h-72 md:w-56 md:h-96 opacity-70 transition-transform duration-500 ease-out"
+               }`}
             />
           );
         })}
       </div>
-      
+
       {/* Navigation Buttons */}
       <button onClick={prevSlide} className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg">
         <ChevronLeft size={24} />
@@ -47,14 +85,14 @@ const ImageSlider = () => {
       <button onClick={nextSlide} className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg">
         <ChevronRight size={24} />
       </button>
-      
+
       {/* Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-[15px] left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-white" : "bg-gray-400"}`}
+            className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-[#F25435]" : "bg-gray-400"}`}
           />
         ))}
       </div>

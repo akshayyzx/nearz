@@ -139,7 +139,7 @@ const Hero = () => {
           </p>
 
           {/* Download Badges */}
-          <div className="flex flex-wrap gap-6 mt-8 justify-center md:justify-start gap-10">
+          <div className="flex flex-wrap gap-6 mt-8 justify-center md:justify-start md:gap-12 ">
             <a href="https://apps.apple.com/in/app/nearz/id1549902743" target="_blank" rel="noopener noreferrer">
               <motion.img 
                 src={appleBadge} 

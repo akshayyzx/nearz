@@ -54,12 +54,12 @@ const ContactForm = () => {
       </h2>
 
       {/* Pour Your Heart Out */}
-      <h2 className="text-xl font-semibold  text-center text-[#F25435] my-4">
+      <h2 className="text-xl font-semibold  text-center text-[#F25435] mb-[8px]">
         Pour Your Heart Out
       </h2>
 
       {/* Contact Form */}
-      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4 " >
         {/* Name Input */}
         <input
           type="text"

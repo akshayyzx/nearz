@@ -20,7 +20,7 @@ const ContactSection = () => {
         
       </div>
       {/* Contact Form Component */}
-      <div className="w-full md:w-3/4 flex justify-center">
+      <div className="w-full md:w-3/4 flex justify-center my-[-40px] mb-[-15px]">
         <ContactForm />
       </div>
     </div>
