@@ -12,18 +12,14 @@ const VirtualTryOn = () => {
       </h2>
 
       {/* Carousel */}
-      <div className="mt-8 flex justify-center">
-        <div className="w-full max-w-[400px]">
-          <SwipeCarousel />
-        </div>
-      </div>
+
 
       {/* Text Info */}
-      <div className="mt-8 space-y-2 text-base md:text-lg">
-        <p>Scan your face</p>
+      <div className="space-y-2 text-base md:text-lg mt-7">
+        <Button className="text-lg md:text-xl font-bold  text-white bg-[#F25435] ">COMING SOON...</Button>
+        <p className="mt-3">Scan your face</p>
         <p>Checkout your Hairstyles, HairColor, Makeup, Brows & much more</p>
         
-        <Button className="text-lg md:text-xl font-bold mt-2 text-white bg-[#F25435] ">COMING SOON...</Button>
       </div>
     </section>
   );

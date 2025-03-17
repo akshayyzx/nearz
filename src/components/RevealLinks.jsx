@@ -1,5 +1,5 @@
 import React from "react";
-import { FaXTwitter, FaLinkedin, FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedin, FaFacebook, FaInstagram, FaPinterest ,FaWhatsapp} from "react-icons/fa6";
 
 const socialLinks = [
   { href: "https://x.com/Nearzsalon", icon: <FaXTwitter className="text-black hover:text-opacity-80" />, label: "X (formerly Twitter)" },
@@ -17,6 +17,11 @@ const socialLinks = [
       />
     ),
     label: "Medium",
+  },
+  {
+    href: "https://wa.me/919876543210", // Replace with your WhatsApp number
+    icon: <FaWhatsapp className="text-green-500 hover:text-opacity-80" />,
+    label: "WhatsApp",
   },
 ];
 
