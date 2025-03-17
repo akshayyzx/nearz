@@ -23,7 +23,7 @@ const ImageSlider = () => {
   return (
     <div className="relative w-full max-w-3xl mx-auto flex flex-col items-center justify-center overflow-hidden">
       <h2 className="text-xl md:text-2xl font-semibold m-4 py-4">Take a <strong className="text-[#F25435]">Close</strong> Look at Our App</h2>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center ">
         {[currentIndex - 1, currentIndex, currentIndex + 1].map((index) => {
           const actualIndex = (index + images.length) % images.length;
           const isActive = actualIndex === currentIndex;

@@ -18,7 +18,7 @@ const ContactForm = () => {
     setStatus(null);
 
     const form = new FormData();
-    form.append("access_key", "82589e7e-049f-40e6-8415-3dd8a3740103"); // Replace with your Web3Forms access key
+    form.append("access_key", "865ad5a7-9c36-4d25-86a2-eac5d8260f92"); // Replace with your Web3Forms access key
     form.append("name", formData.name);
     form.append("message", formData.message);
 

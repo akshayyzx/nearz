@@ -23,9 +23,9 @@ const steps = [
     desc: "Choose your preferred date and time, book instantly, and secure your appointment hassle-free—all with just a few taps." 
   },
   { 
-    text: "Enjoy Your Salon Experience", 
+    text: "Earn Loyalty rewards on every visit", 
     img: img4, 
-    desc: "Visit the salon at your scheduled time and enjoy high-quality services from experienced professionals without the long wait." 
+    desc: "Get successive discount starting 10% OFF on 1st visit & upto 50% OFF on 5th visit." 
   },
   { 
     text: "Share Your Feedback", 

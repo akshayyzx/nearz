@@ -67,7 +67,7 @@ export default function TestimonialCarousel() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className={`absolute bg-gray-200 p-6 rounded-xl shadow-lg text-center w-[250px] h-[250px] flex flex-col justify-center transition-transform duration-500 ease-in-out ${position}`}
+                className={`absolute bg-gray-100 p-6 rounded-xl shadow-lg text-center w-[250px] h-[250px] flex flex-col justify-center transition-transform duration-500 ease-in-out ${position}`}
               >
                 <p className="italic text-md mb-2 px-2">"{testimonial.text}"</p>
                 <h4 className="font-semibold text-lg text-[#F25435]">{testimonial.name}</h4>
@@ -81,7 +81,7 @@ export default function TestimonialCarousel() {
         {/* Right Button - Fixed Positioning */}
         <button 
           onClick={nextSlide} 
-          className="absolute right-1 md:right-10 p-3 bg-gray-200 rounded-full shadow-md hover:bg-gray-300 transition z-20"
+          className="absolute right-1 md:right-10 p-3 bg-gray-100 rounded-full shadow-md hover:bg-gray-300 transition z-20"
           style={{ top: "50%", transform: "translateY(-50%)" }}
         >
           <FaChevronRight className="text-xl" />

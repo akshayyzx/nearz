@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/logo.jpg";
 import Button from "./Button";
 
-const Header = ({ isConfettiRunning }) => {
+const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [applyBlur, setApplyBlur] = useState(true);
-
-  useEffect(() => {
-    if (!isConfettiRunning) {
-      setTimeout(() => setApplyBlur(false), 4000); // Smooth removal
-    }
-  }, [isConfettiRunning]);
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -21,11 +14,7 @@ const Header = ({ isConfettiRunning }) => {
   };
 
   return (
-    <header
-      className={`fixed top-0 w-full text-black py-6 z-50 transition-all duration-700 
-        ${applyBlur ? "backdrop-blur-xl bg-white/50" : "bg-white"}`}
-      style={{ filter: applyBlur ? "blur(8px)" : "none" }} // Force blur with CSS
-    >
+    <header className="fixed top-0 w-full text-black py-6 z-50 bg-white transition-all duration-700">
       <div className="relative flex items-center max-w-7xl mx-auto px-6">
         {/* Logo */}
         <div
