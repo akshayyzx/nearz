@@ -49,7 +49,7 @@ const ImageSlider = () => {
 
   return (
     <div
-      className="relative w-full max-w-3xl mx-auto flex flex-col items-center justify-center  mb-10 "
+      className="relative w-full max-w-3xl mx-auto flex flex-col items-center justify-center overflow-hidden mb-10 "
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
