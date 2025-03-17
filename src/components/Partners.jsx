@@ -9,7 +9,7 @@ const logos = [
 
 const Partners = () => {
   return (
-    <div id="partners" className="scroll-mt-16">
+    <div id="partners" className="scroll-mt-16 ">
       <h2 className="text-3xl font-bold text-center py-10 scroll-mt-16">
         Over <strong className="text-[#F25435]">100+</strong> salons onboarded last month and counting
       </h2>

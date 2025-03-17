@@ -20,7 +20,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section id="features" className="bg-white py-16 px-6 md:px-12 flex flex-col items-center ">
+    <section id="features" className="bg-white py-16 px-6 md:px-12 flex flex-col items-center  ">
       {/* Title with Animated Stroke Effect */}
       <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1D] text-center mb-12 max-w-4xl leading-snug relative">
         Say Hello to Salon Life with{" "}

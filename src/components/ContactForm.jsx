@@ -39,7 +39,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+    <div className="flex flex-col items-center w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg ">
       {/* Heading */}
       <h2 className="text-lg md:text-xl font-semibold text-center">
         Call{" "}

@@ -1,10 +1,9 @@
 import React from "react";
-import SwipeCarousel from "../components/SwipeCarousel";
 import Button from "./Button";
 
 const VirtualTryOn = () => {
   return (
-    <section  id="upcoming" className="text-center py-12 px-4 md:px-8 lg:px-16 bg-white text-black scroll-mt-20">
+    <section  id="upcoming" className="text-center py-12 px-4 md:px-8 lg:px-16 bg-white text-black scroll-mt-20 ">
       {/* Title */}
       <h3 className="text-lg md:text-xl font-bold text-[#F25435]">Create Your Looks</h3>
       <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mt-2">
