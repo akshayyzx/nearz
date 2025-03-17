@@ -36,8 +36,10 @@ function App() {
       <Pathway/>
       <BorderDivider/>
       <Upcoming/>
+      <BorderDivider/>
      
       <Partners/>
+  
     
       <Testimonials/>
       <BorderDivider/>
