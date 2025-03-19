@@ -8,27 +8,27 @@ import img5 from "../assets/step5.gif";
 
 const steps = [
   { 
-    text: "Discover Nearby Salons", 
+    text: "Discover nearby Salons", 
     img: img1, 
     desc: "Explore a variety of salons near you, from premium beauty studios to budget-friendly options, all in one place." 
   },
   { 
-    text: "Compare Services", 
+    text: "Compare services", 
     img: img2, 
     desc: "Easily compare salons based on pricing, distance, customer ratings, and available services to find the perfect match for your needs." 
   },
   { 
-    text: "Book Your Appointment", 
+    text: "Book your appointment", 
     img: img3, 
     desc: "Choose your preferred date and time, book instantly, and secure your appointment hassle-free—all with just a few taps." 
   },
   { 
-    text: "Earn Loyalty rewards on every visit", 
+    text: "Earn loyalty rewards on every visit", 
     img: img4, 
     desc: "Get successive discount starting 10% OFF on 1st visit & upto 50% OFF on 5th visit." 
   },
   { 
-    text: "Share Your Feedback", 
+    text: "Share your feedback", 
     img: img5, 
     desc: "Rate your experience, leave a review, and earn discounts, loyalty rewards, and exclusive deals for your next visit." 
   },
@@ -40,7 +40,7 @@ const Pathway = () => {
     <section className="relative bg-white py-16 px-6 md:px-12 flex flex-col items-center  ">
       {/* Heading */}
       <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-10 md:mb-16 text-center">
-        How It Works
+        How it works
       </h1>
 
       {/* Responsive SVG Paths */}

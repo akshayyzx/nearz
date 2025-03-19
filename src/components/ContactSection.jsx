@@ -11,10 +11,9 @@ const ContactSection = () => {
       {/* Rotating Icons & Heading Section */}
       <div className="w-full  md:justify-center text-center">
         <h2 className="text-xl md:text-4xl font-semibold my-4  ">
-          <strong className="text-[#F25435]">Follow</strong> and stay{" "}
-          <strong className="text-[#F25435]">Updated</strong> 🚀
+          <strong className="text-gray-700">Stay Connected</strong>
         </h2>
-        <div className="w-full md:w-3/4 flex justify-center md:ml-12">
+        <div className="w-full md:w-3/4 flex justify-center md:ml-17">
         <RotatingIcons />
       </div>
         

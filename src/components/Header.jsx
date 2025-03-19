@@ -22,7 +22,7 @@ const Header = () => {
           className="absolute left-3 md:left-6 top-1/2 transform -translate-y-1/2 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          <img src={logo} alt="Logo" className="h-16 object-contain" />
+          <img src={logo} alt="Logo" className="h-8.5 object-contain md:h-12" />
         </div>
 
         {/* Centered Navigation */}

@@ -15,17 +15,17 @@ import Footer from './components/Footer'
 
 
 function App() {
-  useEffect(() => {
-    const handleLoad = () => {
-      window.scrollTo(0, 0); // Scroll to top AFTER everything loads
-    };
+  // useEffect(() => {
+  //   const handleLoad = () => {
+  //     window.scrollTo(0, 0); // Scroll to top AFTER everything loads
+  //   };
 
-    window.onload = handleLoad; // Ensure it triggers only after full page load
+  //   window.onload = handleLoad; // Ensure it triggers only after full page load
 
-    return () => {
-      window.onload = null; // Cleanup to avoid conflicts
-    };
-  }, []);
+  //   return () => {
+  //     window.onload = null; // Cleanup to avoid conflicts
+  //   };
+  // }, []);
   return (
     <div>
       <Header/>

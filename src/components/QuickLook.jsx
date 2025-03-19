@@ -36,14 +36,10 @@ const ImageSlider = () => {
   // Handle touch end (detect swipe direction)
   const handleTouchEnd = () => {
     const swipeDistance = touchStartX.current - touchEndX.current;
-    const swipeThreshold = 50; // Minimum swipe distance to trigger change
+    const swipeThreshold = 50;
 
     if (Math.abs(swipeDistance) > swipeThreshold) {
-      if (swipeDistance > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
+      swipeDistance > 0 ? nextSlide() : prevSlide();
     }
   };
 
@@ -58,20 +54,20 @@ const ImageSlider = () => {
         Take a <strong className="text-[#F25435]">Close</strong> Look at Our App
       </h2>
 
-      <div className="flex items-center justify-center space-x-4 md:space-x-2">
+      <div className="flex items-center justify-center space-x-2 md:space-x-4">
         {[currentIndex - 1, currentIndex, currentIndex + 1].map((index) => {
           const actualIndex = (index + images.length) % images.length;
           const isActive = actualIndex === currentIndex;
 
           return (
             <img
-            key={actualIndex}
-            src={images[actualIndex]}
-            alt={`Slide ${actualIndex + 1}`}
-            className={`transition-all duration-1000 ease-in-out transform 
-              ${isActive
-                ? "w-64 h-112 md:w-80 md:h-[37rem] mx-auto scale-102 opacity-100"
-                : "w-48 h-72 md:w-56 md:h-96 opacity-70 scale-98"
+              key={actualIndex}
+              src={images[actualIndex]}
+              alt={`Slide ${actualIndex + 1}`}
+              className={`transition-all duration-700 ease-in-out transform ${
+                isActive
+                  ? "w-64 h-112 md:w-80 md:h-[37rem] mx-auto scale-105 opacity-100"
+                  : "w-48 h-72 md:w-56 md:h-96 opacity-70 scale-95"
               }`}
             />
           );
@@ -95,13 +91,13 @@ const ImageSlider = () => {
       </button>
 
       {/* Dots Navigation */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="mt-4 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              currentIndex === index ? "bg-[#F25435] scale-125" : "bg-gray-400"
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              currentIndex === index ? "bg-[#F25435] scale-105" : "bg-gray-400"
             }`}
           />
         ))}
