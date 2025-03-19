@@ -77,9 +77,10 @@ const Hero = () => {
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         {isMobile && (
           <div className="text-center min-h-[120px] px-4">
-            <h4 className="text-[20px] sm:text-lg md:text-2xl font-bold leading-normal text-black mt-2 sm:mt-4">
-              Empowering Salons, Enriching Lives
-            </h4>
+   <h4 className="text-[18px] sm:text-lg md:text-2xl font-bold leading-snug text-black mt-2 sm:mt-4 text-center">
+    Empowering Salons, Enriching Lives
+  </h4>
+
             <h1 className="text-[25px] sm:text-3xl md:text-5xl font-black leading-tight text-[#F25435] py-3">
               AI-based Salon Appointment Booking App
             </h1>
