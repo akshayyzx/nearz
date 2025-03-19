@@ -1,173 +1,190 @@
 import React, { useState, useEffect } from "react";
-import appleBadge from '../assets/app-store.jpg';
-import playstoreBadge from '../assets/playstore.jpg';
+import { motion } from "framer-motion";
+import appleBadge from "../assets/app-store.jpg";
+import playstoreBadge from "../assets/playstore.jpg";
 import mobileImage from "../assets/hero_banner.jpg";
 import backImage from "../assets/flip-image.jpg";
-import { motion } from "framer-motion";
-import logo from '../assets/logo.jpg';
-import peach from '../assets/peach.png';
-import aquagreen from '../assets/aqua-green.png';
+import logo from "../assets/logo.jpg";
+import peach from "../assets/peach.png";
+import aquagreen from "../assets/aqua-green.png";
 
 const Hero = () => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
+  // Handle screen resizing for mobile detection
   useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    const updateViewport = () => setIsMobile(typeof window !== "undefined" && window.innerWidth < 768);
     
-    checkIfMobile();
-    window.addEventListener('resize', checkIfMobile);
-    return () => window.removeEventListener('resize', checkIfMobile);
+    updateViewport(); // Set initial state correctly
+    window.addEventListener("resize", updateViewport);
+    
+    return () => window.removeEventListener("resize", updateViewport);
   }, []);
+  
 
+  // Auto flip logic for mobile
   useEffect(() => {
-    let interval;
-    if (isMobile) {
-      interval = setInterval(() => {
-        setIsFlipped(prev => !prev);
-      }, 2800);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isMobile]);
+    if (!isMobile) return; // Only run on mobile
 
-  const cardInnerStyle = {
-    transformStyle: "preserve-3d",
-    transition: "transform 0.8s",
-    transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
-  };
+    const interval = setInterval(() => {
+      setIsFlipped((prev) => !prev);
+    }, 2800);
 
-  const backfaceHiddenStyle = {
-    backfaceVisibility: "hidden",
-    WebkitBackfaceVisibility: "hidden"
-  };
-
-  const backSideStyle = {
-    ...backfaceHiddenStyle,
-    transform: "rotateY(180deg)"
-  };
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [isMobile]); // Depend only on isMobile
 
   return (
-    <section className="bg-white min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 mx-auto text-center md:text-left relative">
-      {/* Desktop Only Background Leaves */}
+    <section className="bg-white min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-10 lg:px-16 text-center md:text-left relative w-full">
       {!isMobile && (
         <>
-          <motion.img 
-            src={peach} 
-            alt="Peach Leaf" 
-            className="absolute top-20 left-10 w-24 md:w-32 opacity-20"
-            initial={{ opacity: 0.4, scale: 1 }}
-            animate={{ x: [0, -2, 2, -2, 2, 0], y: [0, 2, -2, 2, -2, 0] }}
-            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+          <motion.img
+            src={peach}
+            alt="Peach Leaf"
+            className="absolute top-16 left-8 w-16 md:w-28 opacity-20"
+            initial={{ opacity: 0.4 }}
+            animate={{ x: [-3, 3, -3], y: [3, -3, 3] }}
+            transition={{ duration: 3, repeat: Infinity }}
           />
-          <motion.img 
-            src={aquagreen} 
-            alt="Aqua Green Leaf" 
-            className="absolute bottom-10 right-10 w-24 md:w-32 opacity-20"
-            initial={{ opacity: 0.4, scale: 1 }}
-            animate={{ x: [0, 2, -2, 2, -2, 0], y: [0, -2, 2, -2, 2, 0] }}
-            transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+          <motion.img
+            src={aquagreen}
+            alt="Aqua Green Leaf"
+            className="absolute bottom-10 right-8 w-16 md:w-28 opacity-20"
+            initial={{ opacity: 0.4 }}
+            animate={{ x: [3, -3, 3], y: [-3, 3, -3] }}
+            transition={{ duration: 3, repeat: Infinity }}
           />
         </>
       )}
 
-      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-        {isMobile && (
-          <div className="text-center min-h-[120px] px-4">
-   <h4 className="text-[18px] sm:text-lg md:text-2xl font-bold leading-snug text-black mt-2 sm:mt-4 text-center">
-    Empowering Salons, Enriching Lives
-  </h4>
+      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="flex flex-col items-center md:items-start text-center md:text-left w-full px-2">
+          <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-black leading-tight">
+            Empowering Salons, Enriching Lives
+          </h4>
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#F25435] leading-tight py-3">
+            AI-based Salon Appointment Booking App
+          </h1>
 
-            <h1 className="text-[25px] sm:text-3xl md:text-5xl font-black leading-tight text-[#F25435] py-3">
-              AI-based Salon Appointment Booking App
-            </h1>
-          </div>
-        )}
+          {/* Mobile Image Between Headings */}
+          {isMobile && (
+  <div className="flex justify-center m-6 md:m-10">
+    <motion.div 
+  className="relative w-[90%] max-w-[400px] rounded-lg"
+  style={{ perspective: "1000px" }}
+>
+  <motion.div 
+    className="relative w-full h-auto"
+    style={{
+      transformStyle: "preserve-3d",
+    }}
+    animate={{ rotateY: isFlipped ? 180 : 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <motion.img
+      src={mobileImage}
+      alt="Salon Illustration"
+      className="w-full h-auto object-cover rounded-lg"
+      style={{ backfaceVisibility: "hidden" }}
+    />
+    <motion.img
+      src={backImage}
+      alt="Salon Services"
+      className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
+      style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+    />
+  </motion.div>
+</motion.div>
 
-        {/* Image Flip Section */}
-        <div className="flex justify-center m-6 md:m-10">
-          <motion.div
-            className="relative flex justify-center items-center"
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div 
-              className="w-full h-auto"
-              style={{ perspective: "1000px" }}
-              onMouseEnter={() => !isMobile && setIsFlipped(true)}
-              onMouseLeave={() => !isMobile && setIsFlipped(false)}
-            >
-              <div className="relative w-full h-full" style={cardInnerStyle}>
-                <div className="w-[300px] sm:w-[350px] md:w-[450px] lg:w-[550px]" style={backfaceHiddenStyle}>
-                  <motion.img
-                    src={mobileImage}
-                    alt="Salon Illustration"
-                    className="w-full h-auto object-cover rounded-lg"
-                    animate={{ y: [-5, 5, -5] }}
-                    transition={{ repeat: Infinity, duration: 4 }}
-                  />
-                </div>
-                <div 
-                  className="absolute inset-0 flex items-center justify-center rounded-lg"
-                  style={backSideStyle}
-                >
-                  <img 
-                    src={backImage} 
-                    alt="Salon Services" 
-                    className="w-[280px] sm:w-[350px] md:w-[450px] lg:w-[550px] object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+  </div>
+)}
 
-        {/* Text and Buttons */}
-        <div className="text-center md:flex md:flex-col md:items-center">
-          {!isMobile && (
-            <>
-              <h4 className="text-lg md:text-xl font-bold leading-snug md:leading-tight text-black">
-                Empowering Salons, Enriching Lives
-              </h4>
-              <h1 className="text-3xl md:text-5xl font-black leading-tight text-[#F25435] py-3">
-                AI-based Salon Appointment Booking App
-              </h1>
-            </>
-          )}
-          <p className="text-lg md:text-xl mt-2 opacity-90 font-black px-4">
-            Revolutionize your salon experience with
-            <br />
-            <img 
-              src={logo} 
-              alt="Nearz Logo" 
-              className="h-12 md:h-14 my-3 md:my-2 mx-auto"
-            />
+          <p className="text-base sm:text-lg md:text-xl font-medium opacity-90 max-w-lg px-2">
+            Revolutionize your salon experience with <br />
+            <img src={logo} alt="Nearz Logo" className="h-12 md:h-14 my-3 mx-auto md:mx-0" />
             The effortless way to book appointments
           </p>
-          <div className="flex flex-wrap gap-6 mt-8 justify-center md:gap-12">
-            <a href="#">
-              <motion.img 
-                src={appleBadge} 
-                alt="Download on the App Store" 
-                className="h-12 sm:h-14 w-auto" 
+          <div className="flex gap-6 sm:gap-8 mt-6">
+            <a
+              href="https://apps.apple.com/in/app/nearz/id1549902743?platform=iphone"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.img
+                src={appleBadge}
+                alt="Download on the App Store"
+                className="h-10 sm:h-15"
                 whileHover={{ scale: 1.1 }}
               />
             </a>
-            <a href="#">
-              <motion.img 
-                src={playstoreBadge} 
-                alt="Get it on Google Play" 
-                className="h-12 sm:h-14 w-auto" 
+            <a
+              href="https://play.google.com/store/apps/details?id=com.dazzleapp&pcampaignid=web_share"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.img
+                src={playstoreBadge}
+                alt="Get it on Google Play"
+                className="h-10 sm:h-15"
                 whileHover={{ scale: 1.1 }}
               />
             </a>
           </div>
         </div>
+
+        {/* Image Flip Section for Desktop */}
+        {!isMobile && (
+          <div
+            className="relative w-full h-auto group"
+            style={{ perspective: "1000px" }}
+          >
+            <div
+              className="relative w-full h-full"
+              style={{
+                transformStyle: "preserve-3d",
+                transition: "transform 0.8s",
+                transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+              }}
+            >
+              {/* Front Image */}
+              <motion.div
+                className="absolute inset-0 flex justify-center items-center w-full h-full cursor-pointer"
+                style={{
+                  backfaceVisibility: "hidden",
+                  opacity: isFlipped ? 0 : 1,
+                  transition: "opacity 0.5s",
+                }}
+                onMouseEnter={() => setIsFlipped(true)}
+              >
+                <motion.img
+                  src={mobileImage}
+                  alt="Salon Illustration"
+                  className="w-full h-auto object-cover rounded-lg"
+                  animate={{ y: [-5, 5, -5] }}
+                  transition={{ repeat: Infinity, duration: 4 }}
+                />
+              </motion.div>
+
+              {/* Back Image */}
+              <motion.div
+                className="absolute inset-0 flex justify-center items-center w-full h-full cursor-pointer"
+                style={{
+                  backfaceVisibility: "hidden",
+                  transform: "rotateY(180deg)",
+                  opacity: isFlipped ? 1 : 0,
+                  transition: "opacity 0.5s",
+                }}
+                onMouseLeave={() => setIsFlipped(false)}
+              >
+                <img
+                  src={backImage}
+                  alt="Salon Services"
+                  className="w-full h-auto object-cover rounded-lg"
+                />
+              </motion.div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
