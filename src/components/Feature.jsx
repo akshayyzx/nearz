@@ -23,9 +23,10 @@ const Features = () => {
       {/* Title */}
       <h2 className="text-3xl md:text-5xl font-bold text-[#1A1A1D] text-center mb-12 max-w-4xl leading-snug">
         Say <strong className="text-[#F25435]">Hello</strong> to salon life with{" "}
-        <span className="text-[#F25435] font-bold tracking-wide uppercase border-b-4 border-[#F25435] pb-1">
+        <span className="text-[#F25435] font-bold tracking-wide uppercase">
   NEARZ
 </span>
+
 
       </h2>
 

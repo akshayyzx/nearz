@@ -30,7 +30,7 @@ function App() {
     <div>
       <Header/>
       <Hero/>
-      <BorderDivider hideOnMobile={false} margin="md:mt-[-12px] mb-4 ml-4"/>
+      <BorderDivider hideOnMobile={false} margin="md:mt-[-12px] mb-5 ml-4"/>
       <Features/>
       <BorderDivider/>
       <Pathway/>
