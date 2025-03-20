@@ -29,8 +29,9 @@ function App() {
   return (
     <div>
       <Header/>
+      {/* <NewHero/> */}
       <Hero/>
-      <BorderDivider hideOnMobile={false} margin="md:mt-[-12px] mb-5 ml-4"/>
+      <BorderDivider/>
       <Features/>
       <BorderDivider/>
       <Pathway/>
