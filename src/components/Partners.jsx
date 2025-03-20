@@ -3,8 +3,8 @@ import React from "react";
 const logos = [
   "https://images.seeklogo.com/logo-png/8/2/loreal-professionnel-logo-png_seeklogo-81124.png",
   "https://i0.wp.com/bwretailworld.com/wp-content/uploads/2024/06/Heading-34.png?resize=1280%2C700&ssl=1",
-  "https://nearz.in/images/big_master.jpeg",
-  "https://nearz.in/images/lyna.jpeg"
+  "http://res.cloudinary.com/dquo71wwj/image/upload/v1742498549/mcdf7307fowwhot6arjs.jpg",
+  "http://res.cloudinary.com/dquo71wwj/image/upload/v1742498565/wlgoviohgjrrsuikigdj.jpg"
 ];
 
 const Partners = () => {
