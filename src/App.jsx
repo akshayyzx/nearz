@@ -31,7 +31,7 @@ function App() {
       <Header/>
       {/* <NewHero/> */}
       <Hero/>
-      <BorderDivider/>
+      <BorderDivider hideOnMobile = {false} margin = "mt-[-40]" />
       <Features/>
       <BorderDivider/>
       <Pathway/>

@@ -55,3 +55,8 @@
     }
   }
   
+  @media (max-width: 375px) {
+    .custom-mobile {
+      min-height: 200px;
+    }
+  }

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
-import mobileImageFront from "../assets/hero_banner.jpg";
+import mobileImageFront from "../assets/hero_banner_mobile.jpg";
+import mobileImageFront2 from "../assets/hero_banner_desktop.jpg";
 import mobileImageBack from "../assets/flip-image.jpg";
 import appStore from "../assets/app-store.jpg";
 import googlePlay from "../assets/playstore.jpg";
+import logo from '../assets/logo.jpg'
+import leave1 from '../assets/peach.png'
+import leave2 from '../assets/aqua-green.png'
 
 const Hero = () => {
   const [isMobileFlipped, setIsMobileFlipped] = useState(false);
@@ -22,6 +26,19 @@ const Hero = () => {
       id="hero"
       className=" sm:min-h-[100px] min-h-[600px] md:min-h-[700px] flex flex-col md:flex-row-reverse items-center justify-center md:gap-10 px-6 md:px-8 lg:px-12 py-17 bg-white"
     >
+     <img 
+  src={leave1} 
+  alt="Leaf 1" 
+  className="absolute top-15 left-2 w-16 md:w-24 opacity-75 animate-spin-slow hidden md:block" 
+/>
+
+{/* Leaf 2 - Hidden on Mobile */}
+<img 
+  src={leave2} 
+  alt="Leaf 2" 
+  className="absolute bottom-8 right-5 w-16 md:w-24 opacity-75 animate-pulse z-20 hidden md:block" 
+/>
+
       {/* Text Section */}
       <div className="text-center md:text-left text-lg md:text-2xl lg:text-3xl md:w-1/2 px-6">
         <h2 className="text-lg text-gray-600 font-medium">Empowering Salons, Enriching Lives</h2>
@@ -30,7 +47,8 @@ const Hero = () => {
         </h1>
 
         <p className="text-gray-700 mt-5">Revolutionize your salon experience with</p>
-        <span className="text-orange-500 font-semibold text-xl">Nearz</span>
+        <img src={logo} alt="Nearz Logo" className="h-10 md:h-10 lg:h-12 inline-block flex justify-center my-2" />
+
         <p className="text-gray-700">The effortless way to book appointments</p>
 
         {/* App Store Buttons */}
@@ -44,44 +62,42 @@ const Hero = () => {
         </div>
 
         {/* Mobile Image (Auto Flip) */}
-        <div className="md:hidden flex justify-center mt-4 w-full">
-          <div
-            className="relative  w-[95%] max-w-[350px] h-[400px] rounded-lg"
-            style={{
-              transformStyle: "preserve-3d",
-              perspective: "1000px",
-            }}
-          >
-            {/* Front Image */}
-            <img
-              src={mobileImageFront}
-              alt="Mobile App Front"
-              className="absolute  left-0 w-full h-full object-contain rounded-lg"
-              style={{
-                backfaceVisibility: "hidden",
-                transition: "transform 0.7s ease-in-out",
-                transform: isMobileFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
-              }}
-            />
+        <div className="md:hidden flex justify-center mt-10 w-full">
+  <div
+    className="relative w-[350px] h-[350px] rounded-lg overflow-hidden"
+    style={{
+      transformStyle: "preserve-3d",
+      perspective: "1000px",
+    }}
+  >
+    <img
+      src={mobileImageFront}
+      alt="Mobile App Front"
+      className="absolute left-0 w-full h-full object-contain rounded-lg "
+      style={{
+        backfaceVisibility: "hidden",
+        transition: "transform 0.7s ease-in-out",
+        transform: isMobileFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+      }}
+    />
+    
+    <img
+      src={mobileImageBack}
+      alt="Mobile App Back"
+      className="absolute left-0 w-full h-full object-contain rounded-lg"
+      style={{
+        backfaceVisibility: "hidden",
+        transition: "transform 0.7s ease-in-out",
+        transform: isMobileFlipped ? "rotateY(0deg)" : "rotateY(-180deg)",
+      }}
+    />
+  </div>
+</div>
 
-            {/* Back Image */}
-            <img
-              src={mobileImageBack}
-              alt="Mobile App Back"
-              className="absolute top-0 left-0 w-full h-full object-contain rounded-lg"
-              style={{
-                backfaceVisibility: "hidden",
-                transition: "transform 0.7s ease-in-out",
-                transform: isMobileFlipped ? "rotateY(0deg)" : "rotateY(-180deg)",
-                position: "absolute",
-              }}
-            />
-          </div>
-        </div>
       </div>
 
       {/* Desktop Image (Hover Flip) */}
-      <div className="hidden md:flex justify-center lg:justify-center md:w-1/2 rounded-lg">
+      <div className="hidden md:flex justify-center lg:justify-center md:w-1/2  ">
         <div
           className="relative w-[400px] h-[450px] lg:w-[500px] lg:h-[600px] group transition-transform duration-700 ease-in-out animate-floating rounded-lg"
           onMouseEnter={() => setIsDesktopFlipped(true)}
@@ -97,7 +113,7 @@ const Hero = () => {
           >
             {/* Front Image */}
             <img
-  src={mobileImageFront}
+  src={mobileImageFront2}
   alt="Mobile App Front"
   className="absolute top-0 left-0 w-full h-full object-contain rounded-lg"
   style={{
