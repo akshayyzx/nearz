@@ -43,7 +43,7 @@ const Hero = () => {
       <div className="text-center md:text-left text-lg md:text-2xl lg:text-3xl md:w-1/2 px-6">
         <h2 className="text-lg text-gray-600 font-medium">Empowering Salons, Enriching Lives</h2>
         <h1 className="text-4xl md:text-5xl font-bold text-[#F25435] mt-2 leading-tight">
-          AI-based Salon <br /> Appointment <br /> Booking App
+          AI-based Salon <br /> Appointment Booking App
         </h1>
 
         <p className="text-gray-700 mt-5">Revolutionize your salon experience with</p>
