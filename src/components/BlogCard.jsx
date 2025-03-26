@@ -16,7 +16,7 @@ const blogs = [
   {
     id: 2,
     category: "Technology/Future",
-    time: "4 min",
+    time: "5 min",
     title: "The Future of Salon Appointments: Digital Booking Trends in 2025",
     description:
       "Time sensitivity defines trends within the beauty and wellness industry. 2025 will be shaped by digital platforms that streamline salon operations[...]",
