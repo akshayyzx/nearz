@@ -8,8 +8,14 @@ const testimonials = [
   { text: "A game changer for salon appointments! Discounts and service quality are top-notch.", name: "Rohan Mehta", date: "Aug 12, 2023", rating: 4.9 },
   { text: "This app saved me so much time! Booking an appointment is now just a few taps away.", name: "Aditi Sharma", date: "Sep 30, 2023", rating: 5.0 },
   { text: "Easy interface and great features. Finally, an app that understands salon needs!", name: "Vikram Singh", date: "Oct 15, 2023", rating: 4.7 },
-  { text: "Love how convenient this app makes scheduling. Great deals too!", name: "Megha Kapoor", date: "Nov 20, 2023", rating: 4.6 }
+  { text: "Love how convenient this app makes scheduling. Great deals too!", name: "Megha Kapoor", date: "Nov 20, 2023", rating: 4.6 },
+  { text: "The app has transformed how I book appointments. It’s super efficient and saves time.", name: "Priya Nair", date: "Dec 10, 2023", rating: 4.8 },
+  { text: "Fast, reliable, and offers excellent service options. Can’t imagine booking the old way anymore!", name: "Ankit Gupta", date: "Jan 8, 2024", rating: 5.0 },
+  { text: "From discounts to easy rescheduling, this app covers everything I need. Love it!", name: "Sanya Malhotra", date: "Jan 25, 2024", rating: 4.7 },
+  { text: "Booking salon visits has never been easier. Smooth, fast, and user-friendly.", name: "Aarav Joshi", date: "Feb 14, 2024", rating: 4.9 },
+  { text: "Fantastic experience so far. Intuitive design and great features!", name: "Ishita Bansal", date: "Mar 5, 2024", rating: 4.8 }
 ];
+
 
 export default function TestimonialCarousel() {
   const [index, setIndex] = useState(0);

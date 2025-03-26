@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/logo.jpg";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  // const navigate = useNavigate();
   const handleScroll = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -19,14 +21,15 @@ const Header = () => {
         {/* Logo */}
         <div
           id="logo"
-          className="absolute left-3 md:left-6 top-1/2 transform -translate-y-1/2 cursor-pointer"
+          className="absolute left-1 md:left-6 top-1/2 transform -translate-y-1/2 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <img src={logo} alt="Logo" className="h-8.5 object-contain md:h-12" />
         </div>
 
         {/* Centered Navigation */}
-        <nav className="hidden md:flex flex-grow justify-center gap-10">
+        <nav className="hidden md:flex flex-grow justify-center gap-10 relative">
+
           {[
             { name: "Features", id: "features" },
             { name: "Upcoming", id: "upcoming" },
@@ -50,7 +53,7 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               className="bg-[#F25435] text-white cursor-pointer"
-              onClick={() => window.open("https://nearz.in/blog.html", "_blank")}
+              onClick={() => window.open("/blogs", "_blank")}
             >
               Blogs
             </Button>
@@ -94,7 +97,7 @@ const Header = () => {
         {/* Blogs Button (Mobile) */}
         <Button
           className="bg-[#F25435] text-white"
-          onClick={() => window.open("https://nearz.in/blog.html", "_blank")}
+          onClick={() => window.open("/blogs", "_blank")}
         >
           Blogs
         </Button>
